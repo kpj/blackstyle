@@ -8,6 +8,6 @@ test_that("xaringan comments work", {
   "gregexpr",
   "regexec"
 )'
-  code_styled <- grk_style_text(code)
+  code_styled <- black_style_text(code)
   expect_equal(paste(code_styled, collapse = "\n"), code)
 })

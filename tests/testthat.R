@@ -1,4 +1,4 @@
 library(testthat)
-library(grkstyle)
+library(blackstyle)
 
-test_check("grkstyle")
+test_check("blackstyle")

@@ -1,25 +1,16 @@
-Package: grkstyle
-Title: A Tidy R Code Style
+Package: blackstyle
+Title: Black for R
 Version: 0.0.3
-Authors@R: 
-    person(given = "Garrick",
-           family = "Aden-Buie",
-           role = c("aut", "cre"),
-           email = "garrick@adenbuie.com",
-           comment = c(ORCID = "0000-0002-7111-0077"))
-Description: A tidy code style building on the tidyverse code
-    style guidelines but with a small changes for consistent line breaks
-    and indentation. Enforces line breaks, if there are any initially
-    between arguments in function calls and left-indents arguments in
-    function definitions.
+Authors@R: TBD
+Description: TBD
 License: MIT + file LICENSE
-URL: https://github.com/gadenbuie/grkstyle
-BugReports: https://github.com/gadenbuie/grkstyle/issues
-Imports: 
+URL: https://github.com/kpj/blackstyle
+BugReports: https://github.com/kpj/blackstyle/issues
+Imports:
     magrittr,
     purrr,
     styler (>= 1.4.0)
-Suggests: 
+Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8

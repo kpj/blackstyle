@@ -1,37 +1,37 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# grkstyle
+# blackstyle
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-`grkstyle` is an extension package for
+`blackstyle` is an extension package for
 [styler](https://styler.r-lib.org) that holds my personal code style
 preferences.
 
 ## Installation
 
-You can install the grkstyle from Github
+You can install the blackstyle from Github
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("gadenbuie/grkstyle")
+devtools::install_github("gadenbuie/blackstyle")
 ```
 
 ## Usage
 
-To use `grkstyle` by default in styler functions and addins
+To use `blackstyle` by default in styler functions and addins
 
 ``` r
 # Set default code style for {styler} functions
-grkstyle::use_grk_style()
+blackstyle::use_black_style()
 ```
 
 Or add the following to your `~/.Rprofile`
 
-    options(styler.addins_style_transformer = "grkstyle::grk_style_transformer()")
+    options(styler.addins_style_transformer = "blackstyle::black_style_transformer()")
 
 ## Examples
 
@@ -47,7 +47,7 @@ do_something_very_complicated(something = "that", requires = many,
                               arguments = "some of which may be long")
 ```
 
-**grkstyle**
+**blackstyle**
 
 ``` r
 do_something_very_complicated(
@@ -78,7 +78,7 @@ long_function_name <- function(a = "a long argument",
 }
 ```
 
-**grkstyle**
+**blackstyle**
 
 ``` r
 long_function_name <- function(

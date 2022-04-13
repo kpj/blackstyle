@@ -1,25 +1,25 @@
-#' The grkstyle Code Style
+#' The blackstyle Code Style
 #'
 #' Use [styler::style_text()] to format code according to the unofficial
-#' \pkg{grkstyle} style guide. Follows the
+#' \pkg{blackstyle} style guide. Follows the
 #' [tidyverse style guide](https://style.tidyverse.org) as implemented by
 #' [styler::tidyverse_style()], but with additional style rules that enforce
 #' consistent line breaks inside function calls and left-justification of
 #' function arguments in function definitions.
 #'
-#' @section Using the \pkg{grkstyle} code style: You can set the \pkg{grkstyle}
+#' @section Using the \pkg{blackstyle} code style: You can set the \pkg{blackstyle}
 #'   code style as the default code style for \pkg{styler} (and its associated
 #'   RStudio addins, like "Style active file" and "Style selection") by calling
-#'   `grkstyle::use_grk_style()`. If you would rather set this option globally
+#'   `blackstyle::use_black_style()`. If you would rather set this option globally
 #'   for all session, you can add the following to your `.Rprofile`:
 #'
 #'   ```
-#'   options(styler.addins_style_transformer = "grkstyle::grk_style_transformer()")
+#'   options(styler.addins_style_transformer = "blackstyle::black_style_transformer()")
 #'   ```
 #'
 #' @examples
 #' \dontrun{
-#' use_grk_style()
+#' use_black_style()
 #' # Use styler addins
 #' styler:::style_selection()
 #' }
@@ -27,23 +27,23 @@
 #' ex_code <- "mtcars %>% mutate(mpg = mpg * 2,\n\t\t     cyl = paste(cyl)) %>% head()"
 #' cat(ex_code)
 #'
-#' grk_style_text(ex_code)
+#' black_style_text(ex_code)
 #' @param ... Arguments passed to underling \pkg{styler} functions (identified
-#'   by removing the `grk_` prefix), except for `transofrmers`, which is set to
-#'   the `grk_style_transformer()` internally.
-#' @name grk_style
+#'   by removing the `black_` prefix), except for `transformers`, which is set to
+#'   the `black_style_transformer()` internally.
+#' @name black_style
 NULL
 
-#' @describeIn grk_style Set the \pkg{grkstyle} style as the default style for
+#' @describeIn black_style Set the \pkg{blackstyle} style as the default style for
 #'   \pkg{styler} addins.
 #' @export
-use_grk_style <- function() {
-  options(styler.addins_style_transformer = "grkstyle::grk_style_transformer()")
+use_black_style <- function() {
+  options(styler.addins_style_transformer = "blackstyle::black_style_transformer()")
 }
 
-#' @describeIn grk_style A code transformer for use with [styler::style_text()]
+#' @describeIn black_style A code transformer for use with [styler::style_text()]
 #' @export
-grk_style_transformer <- function(...) {
+black_style_transformer <- function(...) {
   tidy_style <- styler::tidyverse_style(...)
 
   # line breaks between *all* arguments if line breaks between *any*
@@ -104,29 +104,29 @@ grk_style_transformer <- function(...) {
   tidy_style
 }
 
-#' @describeIn grk_style Style text using the \pkg{grkstyle} code style
+#' @describeIn black_style Style text using the \pkg{blackstyle} code style
 #' @inheritParams styler::style_text
 #' @export
-grk_style_text <- function(text, ...) {
-  styler::style_text(text, ..., transformers = grk_style_transformer())
+black_style_text <- function(text, ...) {
+  styler::style_text(text, ..., transformers = black_style_transformer())
 }
 
-#' @describeIn grk_style Style a file using the \pkg{grkstyle} code style
+#' @describeIn black_style Style a file using the \pkg{blackstyle} code style
 #' @inheritParams styler::style_file
 #' @export
-grk_style_file <- function(path, ...) {
-  styler::style_file(path, ..., transformers = grk_style_transformer())
+black_style_file <- function(path, ...) {
+  styler::style_file(path, ..., transformers = black_style_transformer())
 }
 
-#' @describeIn grk_style Style a directory using the \pkg{grkstyle} code style
+#' @describeIn black_style Style a directory using the \pkg{blackstyle} code style
 #' @export
-grk_style_dir <- function(path, ...) {
-  styler::style_dir(path, ..., transformers = grk_style_transformer())
+black_style_dir <- function(path, ...) {
+  styler::style_dir(path, ..., transformers = black_style_transformer())
 }
 
-#' @describeIn grk_style Style a package using the \pkg{grkstyle} code style
+#' @describeIn black_style Style a package using the \pkg{blackstyle} code style
 #' @inheritParams styler::style_pkg
 #' @export
-grk_style_pkg <- function(pkg = ".", ...) {
-  styler::style_pkg(pkg, ..., transformers = grk_style_transformer())
+black_style_pkg <- function(pkg = ".", ...) {
+  styler::style_pkg(pkg, ..., transformers = black_style_transformer())
 }
