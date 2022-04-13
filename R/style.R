@@ -44,10 +44,10 @@ use_black_style <- function() {
 #' @describeIn black_style A code transformer for use with [styler::style_text()]
 #' @export
 black_style_transformer <- function(...) {
-  tidy_style <- styler::tidyverse_style(...)
+  original_style <- biocthis::bioc_style(indent_by = 2, ...)
 
   # line breaks between *all* arguments if line breaks between *any*
-  tidy_style$line_break$set_linebreak_each_argument_if_multi_line <- function(pd) {
+  original_style$line_break$set_linebreak_each_argument_if_multi_line <- function(pd) {
     if (!(any(pd$token == "','"))) {
       return(pd)
     }
@@ -92,7 +92,7 @@ black_style_transformer <- function(...) {
   }
 
   # Function arguments on new lines, indented with 2 spaces
-  tidy_style$indention$update_indention_ref_fun_dec <- function(pd_nested) {
+  original_style$indention$update_indention_ref_fun_dec <- function(pd_nested) {
     if (pd_nested$token[1] == "FUNCTION" && nrow(pd_nested) > 4) {
       seq <- seq.int(3L, nrow(pd_nested) - 2L)
       pd_nested$indention_ref_pos_id[seq] <- 0L
@@ -101,7 +101,7 @@ black_style_transformer <- function(...) {
     pd_nested
   }
 
-  tidy_style
+  original_style
 }
 
 #' @describeIn black_style Style text using the \pkg{blackstyle} code style
