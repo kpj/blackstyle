@@ -16,8 +16,8 @@ preferences.
 You can install the blackstyle from Github
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("gadenbuie/blackstyle")
+# install.packages("remotes")
+remotes::install_github("kpj/blackstyle")
 ```
 
 ## Usage
